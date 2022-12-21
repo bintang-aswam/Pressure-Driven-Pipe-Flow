@@ -76,7 +76,7 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
    at the top and bottom boundary to zero
 
 5. Repeat from (1.) until a steady state is reached.
-(the pressure gradient is prescribed to be constant value inside the domain (except at inlet and outlet boundary).
+(the pressure gradient is prescribed to be constant value inside the domain) 
 
 Necessary notes on numerical scheme and stability criteria:
 1. An diffusion treatment using explicit FTCS (Forward-Time & Central-Difference Scheme) with five-point stencil 
