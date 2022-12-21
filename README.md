@@ -8,9 +8,9 @@ To conduct numerical modeling on this flow, we are planned to mathematically and
 Two-Dimensional NS-equation \
 - Continuity Equation: $∇ ⋅ u = 0$ (incompressibility)
 
-- Momentum Equation: $\frac{∂u}{∂t} + (u ⋅ ∇) u = − 1/ρ ∇p + \nu ∇²u + g$ \
+- Momentum Equation: $\frac{∂u}{∂t} + (u ⋅ ∇) u = − 1/ρ ∇p + \nu ∇²u + g$ 
 
-where: \
+where: 
 $u$:  velocity profile (dimension: $LT^{-1}$) 
  
 $p$:  pressure field (dimension: $ML^{-1}T^{-2}$) 
@@ -28,7 +28,7 @@ $∇$:  Nabla operator or known as gradient (mathematical operations to define t
 $∇^{2}$: Laplace Operator (mathematically defined as $∇.(∇(⋯))$ or divergence of gradient of any continuous-differentiable function. (dimension: $L^{-2}$)
 
 
-In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in the interest of analytical derivation on velocity profile) given as follows: \
+In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in the interest of analytical derivation on velocity profile) given as follows: 
 1). steady-state incompressible flow \
 2). the [swirling flow](https://www.keyence.com/Images/flowknowledge_trouble_02_02_1470930.gif) can be ignored \
 3). fully developed-based drifting flow will be physically considered \
