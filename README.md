@@ -29,7 +29,7 @@ $p$:  pressure field (dimension: $ML^{-1}T^{-2}$)
 
 $g$:  gravity (dimension: $LT^{-2}$)
 
-$ν$:  kinematic viscosity ($\nu = \frac{\mu }{\rho}$) (dimension: $L^{2}T^{-1}$)
+$ν$:  kinematic viscosity (dimension: $L^{2}T^{-1}$)
 
 $ρ$:  density (dimension: $ML^{-3}$)
 
@@ -48,5 +48,3 @@ In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in th
 3). fully developed-based drifting flow will be physically considered 
 
 Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
-
-
