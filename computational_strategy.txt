@@ -67,13 +67,14 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
 (the pressure gradient is prescribed to be constant value inside the domain (except at inlet and outlet boundary).
 
 Necessary notes on numerical scheme and stability criteria:
-1. An diffusion treatment using explicit FTCS (Forward-Time & Central-Difference Scheme) whereas 
-   an convection treatment which is explicit FTBS (Forward-Time & Backward Scheme).
+1. An diffusion treatment using explicit FTCS (Forward-Time & Central-Difference Scheme) with five-point stencil 
+   whereas an convection treatment which is either explicit FTBS (Forward-Time & Backward Scheme) 
+   or explicit FTCS.
   
 2. a central difference approximation for the
    convection term which is conditionally stable iff the diffusive
-   transport is dominant (i.e., we suggest to not selecting the kinematic
+   transport is dominant (i.e., we suggest not to selecting the kinematic
    viscosity value too low).
 
 3. issue on numerical stability is mathematically prescribed CFL (Courant-Friedrich-Lewy) condition:
-    (ν dt) / (dx²) ≤ 1/2
+    (ν*dt)/(dx*dx) ≤ 1/2
