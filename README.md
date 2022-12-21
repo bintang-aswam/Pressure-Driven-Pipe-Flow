@@ -10,6 +10,8 @@ Team's member:
 2). Bintang A.S.W.A.M
 
 
+GENERAL DESCRIPTION:
+
 **Hagen-Poiseuille Flow** can be understood as an ideal approximation to **axisymmetrical flow inside a pipe** (a.k.a internal flow) due to the presence of **pressure-driven**. It only occurs at **SMALL Reynolds Number**(defined as the ratio between **inertial force** over **viscous force**) regime (a.k.a **incompressible viscous flow**).  
 
 To conduct numerical modeling on this flow, we are planned to mathematically and physically idealize the Continuity Equation and Two-Dimensional Navier Stokes Equation (Momentum Equation) such that the final governing equation leads to One-Dimensional Incompressible-Viscous Navier Stokes (under certain circumstances related physical assumptions) as follows:
