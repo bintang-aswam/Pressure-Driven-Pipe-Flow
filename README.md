@@ -22,6 +22,7 @@ Two-Dimensional NS-equation:
 - Momentum Equation: $\frac{∂u}{∂t} + (u ⋅ ∇) u = − 1/ρ ∇p + \nu ∇²u + g$ 
 
 where: 
+
 $u$:  velocity profile (dimension: $LT^{-1}$) 
  
 $p$:  pressure field (dimension: $ML^{-1}T^{-2}$) 
