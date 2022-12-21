@@ -10,7 +10,7 @@ Team's member:
 2). Bintang A.S.W.A.M
 
 
-GENERAL DESCRIPTION:
+**GENERAL DESCRIPTION:**
 
 **Hagen-Poiseuille Flow** can be understood as an ideal approximation to **axisymmetrical flow inside a pipe** (a.k.a internal flow) due to the presence of **pressure-driven**. It only occurs at **SMALL Reynolds Number**(defined as the ratio between **inertial force** over **viscous force**) regime (a.k.a **incompressible viscous flow**).  
 
@@ -47,3 +47,5 @@ In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in th
 3). fully developed-based drifting flow will be physically considered 
 
 Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
+
+
