@@ -1,82 +1,36 @@
-### Pressure-Driven-Pipe-Flow
+## Pressure-Driven-Pipe-Flow
+### study case: Hagen-Poiseuille Flow
 
-study case : Hagen-Poiseuille Flow
+**Hagen-Poiseuille Flow** can be understood as an ideal approximation to **axisymmetrical flow inside a pipe** (a.k.a internal flow) due to the presence of **pressure-driven**. It only occurs at **SMALL Reynolds Number**(defined as the ratio between **inertial force** over **viscous force**) regime (a.k.a **incompressible viscous flow**).  
+
+To conduct numerical modeling on this flow, we are planned to mathematically and physically idealize the Continuity Equation and Two-Dimensional Navier Stokes Equation (Momentum Equation) such that the final governing equation leads to One-Dimensional Incompressible-Viscous Navier Stokes (under certain circumstances related physical assumptions) as follows:
+
+Two-Dimensional NS-equation \
+- Continuity Equation: $∇ ⋅ u = 0$ (incompressibility)
+
+- Momentum Equation: $\frac{∂u}{∂t} + (u ⋅ ∇) u = − 1/ρ ∇p + \nu ∇²u + g$ \
+
+where: \
+$u$:  velocity profile (dimension: $LT^{-1}$) 
+ 
+$p$:  pressure field (dimension: $ML^{-1}T^{-2}$) 
+
+$g$:  gravity (dimension: $LT^{-2}$)
+
+$ν$:  kinematic viscosity ($\nu = \frac{\mu }{\rho}$) (dimension: $L^{2}T^{-1}$)
+
+$ρ$:  density (dimension: $ML^{-3}$)
+
+$t$:  time (dimension: $T$)
+
+$∇$:  Nabla operator or known as gradient (mathematical operations to define the convection and diffusion terms) (dimension: $L^{-1}$)
+
+$∇^{2}$: Laplace Operator (mathematically defined as $∇.(∇(⋯))$ or divergence of gradient of any continuous-differentiable function. (dimension: $L^{-2}$)
 
 
-Physical modeling-based scenario:
-                  constant pressure gradient (inside pipe)
-                    <<<<<<<<<<------------
-                        wall: u=0, v=0
-   p    +-----------------------------------------------+   p
-   e    |  -->      -->       -->        -->      -->   |   e
-   r    |                                               |   r
-   i    |  -->      -->       -->        -->      -->   |   i
-   o    |                                               |   o
-   d    |  -->      -->       -->        -->      -->   |   d
-   i    +-----------------------------------------------+   i
-   c                    wall: u=0, v=0                      c
--> A rectangular domain (think of a slice from a pipe with
-   circular crossection alongside the longitudal axis)
--> The left and right edge are connected by periodicity,
-   representing an infinitely long domain in x axis
--> Top and bottom edge represent wall boundary conditions
--> A constant pressure gradient (in x direction) acts on the
-   entire domain
---------
+In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in the interest of analytical derivation on velocity profile) given as follows: \
+1). steady-state incompressible flow \
+2). the [swirling flow](https://www.keyence.com/Images/flowknowledge_trouble_02_02_1470930.gif) can be ignored \
+3). fully developed-based drifting flow will be physically considered \
 
-Expected Output: 
-The attained Hagen-Poisseuille profile is indeed independent
-of the initial profile and just depends on the strength of
-the pressure gradient. After certain amount of time, the 
-parabola-based velocity profile will be generated  
-        +-----------------------------------------------+
-        |   ->       ->       ->       ->       ->      |
-        |   --->     --->     --->     --->     --->    |
-        |   ---->    ---->    ---->    ---->    ---->   |
-        |   --->     --->     --->     --->     --->    |
-        |   ->       ->       ->       ->       ->      |
-        +-----------------------------------------------+
-
-Computational strategy:
-It is not necessarily crucial to compute the velocity profile in y
-direction, since it will be approximately to zero throughout the computational domain.
-The main focus on the computation of axisymmetrical flow (in the u-momentum direction).
-The u-momentum equation is given as follows:
-$    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
-                |     |             |       |
-                |     ↓             ↓       |
-                |    = 0        constant    |
-                |                           |
-                ↓                           ↓ $
-        central differences         five-point stencil
-0. Instantiate the u-solution field with ones except for
-   the top and bottom boundary
-1. Compute convection by periodic central difference
-    u ∂u/∂x ≈ u[i, j] ⋅ (u[i, (j+1)] − u[i, (j−1)]) / (2 dx)
-2. Compute diffusion by periodic five-point stencil
-    ν ∇²u ≈ ν (
-        + u[i, (j+1)]
-        + u[(i+1), j]
-        + u[i, (j−1)]
-        + u[(i−1), j]
-        − 4 ⋅ u[i, j]
-        ) / (dx²)
-3. Advance to next step by explicit Euler step
-    u ← u + dt ⋅ (− ∂p/∂x + ν ∇²u − u ∂u/∂x)
-4. Enfore the wall boundary condition by setting the u velocity
-   at the top and bottom boundary to zero
-5. Repeat from (1.) until a steady state is reached.
-(the pressure gradient is prescribed to be constant value inside the domain (except at inlet and outlet boundary).
-
-Necessary notes on numerical scheme and stability criteria:
-1. An diffusion treatment using explicit FTCS (Forward-Time & Central-Difference Scheme) whereas 
-   an convection treatment which is explicit FTBS (Forward-Time & Backward Scheme).
-  
-2. a central difference approximation for the
-   convection term which is conditionally stable iff the diffusive
-   transport is dominant (i.e., we suggest to not selecting the kinematic
-   viscosity value too low).
-
-3. issue on numerical stability is mathematically prescribed CFL (Courant-Friedrich-Lewy) condition:
-    (ν dt) / (dx²) ≤ 1/2
-3. Stability criteria 
+Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
