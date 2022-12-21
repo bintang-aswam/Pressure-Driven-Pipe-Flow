@@ -5,7 +5,7 @@
 
 To conduct numerical modeling on this flow, we are planned to mathematically and physically idealize the Continuity Equation and Two-Dimensional Navier Stokes Equation (Momentum Equation) such that the final governing equation leads to One-Dimensional Incompressible-Viscous Navier Stokes (under certain circumstances related physical assumptions) as follows:
 
-Two-Dimensional NS-equation \
+Two-Dimensional NS-equation: 
 - Continuity Equation: $∇ ⋅ u = 0$ (incompressibility)
 
 - Momentum Equation: $\frac{∂u}{∂t} + (u ⋅ ∇) u = − 1/ρ ∇p + \nu ∇²u + g$ 
@@ -29,8 +29,10 @@ $∇^{2}$: Laplace Operator (mathematically defined as $∇.(∇(⋯))$ or diver
 
 
 In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in the interest of analytical derivation on velocity profile) given as follows: 
-1). steady-state incompressible flow \
-2). the [swirling flow](https://www.keyence.com/Images/flowknowledge_trouble_02_02_1470930.gif) can be ignored \
-3). fully developed-based drifting flow will be physically considered \
+1). steady-state incompressible flow 
+
+2). the [swirling flow](https://www.keyence.com/Images/flowknowledge_trouble_02_02_1470930.gif) can be ignored 
+
+3). fully developed-based drifting flow will be physically considered 
 
 Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
