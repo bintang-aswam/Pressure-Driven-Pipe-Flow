@@ -72,7 +72,7 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
 3. Advance to next step by explicit Euler step
     u ← u + dt ⋅ (− ∂p/∂x + ν ∇²u − u ∂u/∂x)
 
-4. Enfore the wall boundary condition by setting the u velocity
+4. Enforce the wall boundary condition by setting the u velocity
    at the top and bottom boundary to zero
 
 5. Repeat from (1.) until a steady state is reached.
