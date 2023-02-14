@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name="HPPL final project",
+setup(name="HPPL (High Performance Python Lab)-Final Project-2022",
       author="Lyubits* Flow",
       description = 
       '''
