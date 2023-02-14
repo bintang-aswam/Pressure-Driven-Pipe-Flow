@@ -1,4 +1,4 @@
-## In Partial Fullfillment of Final Project on High Performance Python Lab Course (term 2 2022)
+## In Partial Fulfillment of Final Project on High Performance Python Lab Course (term 2 2022)
 ### cae study: Hagen-Poiseuille Flow
 
 Team's name: $Lyubits^{*}$ Flow
