@@ -51,16 +51,19 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
                 |     ↓             ↓       |
                 |    = 0        constant    |
                 |                           |
-                ↓                           ↓ $
+                ↓                           ↓ 
         central differences         five-point stencil
 
 0. Instantiate the u-solution field with ones except for
    the top and bottom boundary
 
-1. Compute convection by periodic central difference
-    u ∂u/∂x ≈ u[i, j] ⋅ (u[i+1, (j)] − u[i-1, (j)]) / (2 dx)
+1.1. Compute the convection term by periodic central difference :
+    u ∂u/∂x ≈ u[i, j] ⋅ (u[i+1, (j)] − u[i-1, (j)]) / (2*dx)
 
-2. Compute diffusion by periodic five-point stencil
+1.2. or Compute the convection term by periodic upwind scheme :
+    u ∂u/∂x ≈ u[i, j] ⋅ (u[i, (j)] − u[i-1, (j)]) / (dx)
+
+2. Compute the diffusion term by periodic five-point stencil :
     ν ∇²u ≈ ν (
         + u[i, (j+1)]
         + u[(i+1), j]
@@ -75,12 +78,12 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
 4. Enforce the wall boundary condition by setting the u velocity
    at the top and bottom boundary to zero
 
-5. Repeat from (1.) until a steady state is reached.
-   (the pressure gradient is prescribed to be constant value inside the domain) 
+5. Repeat from (1) until a steady state is achieved.
+   (the pressure gradient is prescribed to be constant value alongside the circular pipe) 
 
-Necessary notes on numerical scheme and stability criteria:
-1. A diffusion treatment using explicit FTCS (Forward-Time & Central-Space) with five-point stencil 
-   whereas a convection treatment using explicit FTBS (Forward-Time & Backward-Space)
+Necessary notes on finite difference scheme including its stability criteria:
+1. A diffusion term can be treated using explicit FTCS (Forward-Time Central-Space) with five-point stencil, 
+whereas a convection term can be treated using both FTBS(Forward-Time & Central-Space) scheme and upwind scheme
   
 2. A central difference approximation for the convection term which is conditionally stable 
    iff the diffusive transport is dominant (i.e., we suggest not to selecting the kinematic
@@ -88,3 +91,13 @@ Necessary notes on numerical scheme and stability criteria:
 
 3. Issue on numerical stability is mathematically prescribed CFL (Courant-Friedrich-Lewy) condition:
    (ν*dt)/(dx*dx) ≤ 1/2
+   
+4. Two necessary terms in determining the quality of numerical properties: consistency, accuracy, convergency, and stability in this case are nothing but **convective** and **diffusion** terms. \
+Convective term
+- Upwind scheme
+- FTCS scheme
+- WENO scheme 
+
+Diffusion term
+- FTCS scheme
+- WENO scheme
