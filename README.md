@@ -48,3 +48,10 @@ In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in th
 3). fully developed-based drifting flow will be physically considered 
 
 Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
+
+### **Environment**
+`tqdm == 4.64.1`
+`numpy == 1.21.6`
+`cupy == 11.0.0`
+`numba == 0.56.4`
+`matplotlib == 3.2.2`
