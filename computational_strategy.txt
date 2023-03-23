@@ -82,22 +82,12 @@ $    ∂u/∂t + u ∂u/∂x + v ∂u/∂y = - ∂p/∂x + ν ∇²u
    (the pressure gradient is prescribed to be constant value alongside the circular pipe) 
 
 Necessary notes on finite difference scheme including its stability criteria:
-1. A diffusion term can be treated using explicit FTCS (Forward-Time Central-Space) with five-point stencil, 
-whereas a convection term can be treated using both FTBS(Forward-Time & Central-Space) scheme and upwind scheme
+1. A diffusion term can be treated using explicit FTCS (Forward-Time Central-Space) second order with five-point    
+   stencil, whereas a convection term can be treated using explicit FTCS first order
   
 2. A central difference approximation for the convection term which is conditionally stable 
    iff the diffusive transport is dominant (i.e., we suggest not to selecting the kinematic
    viscosity value too low).
 
 3. Issue on numerical stability is mathematically prescribed CFL (Courant-Friedrich-Lewy) condition:
-   (ν*dt)/(dx*dx) ≤ 1/2
-   
-4. Two necessary terms in determining the quality of numerical properties: consistency, accuracy, convergency, and stability in this case are nothing but **convective** and **diffusion** terms. \
-Convective term
-- Upwind scheme
-- FTCS scheme
-- WENO scheme 
-
-Diffusion term
-- FTCS scheme
-- WENO scheme
+   (ν*dt)/(dx*dx) ≤ 0.5
