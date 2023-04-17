@@ -55,3 +55,6 @@ Notice that fully developed flow occurs when the viscous effects due to the pres
 `cupy == 11.0.0`
 `numba == 0.56.4`
 `matplotlib == 3.2.2`
+
+how to install:
+`pip install -r requirements.txt`
