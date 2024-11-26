@@ -1,5 +1,5 @@
 ## In Partial Fulfillment of Final Project on High Performance Python Lab Course (term 2 2022)
-### cae study: Hagen-Poiseuille Flow
+### case study: Two Dimensional Hagen-Poiseuille Flow
 
 Team's name: $Lyubits^{*}$ Flow
 
@@ -50,6 +50,12 @@ In particular, the physical assumptions to describe Hagen-Poiseuille Flow (in th
 3). fully developed-based drifting flow will be physically considered 
 
 Notice that fully developed flow occurs when the viscous effects due to the presence of the shear stress between the fluid particles against pipe wall, which generates a fully-developed velocity profile.
+
+
+### **Repository Structure**
+`Hagen_Poiseuille_Flow.ipynb` : contains three section codes numerically solving the Hagen-Poiseuille Flow which are `NumPy `, `CuPy`, `Numba JIT(Just-In-Time)`
+
+`computational strategy.txt`  : the rigorous description of numerical scheme of Hagen-Poiseuille Flow 
 
 ### **Environment**
 `tqdm == 4.64.1`
