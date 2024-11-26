@@ -53,9 +53,13 @@ Notice that fully developed flow occurs when the viscous effects due to the pres
 
 ### **Environment**
 `tqdm == 4.64.1`
+
 `numpy == 1.21.6`
+
 `cupy == 11.0.0`
+
 `numba == 0.56.4`
+
 `matplotlib == 3.2.2`
 
 how to install:
