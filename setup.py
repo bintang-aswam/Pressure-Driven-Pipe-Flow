@@ -2,9 +2,9 @@ from setuptools import setup
 
 setup(name="HPPL (High Performance Python Lab)-Final Project-2022",
       author="Lyubits* Flow",
-      description = 
+      short_description = 
       '''
-      Numerical and Physical modeling of Pressure-Driven Pipe Flow, Hagen-Poiseuille Flow
+      Two Dimensional Numerical and Physical modeling of Pressure-Driven Pipe Flow, Hagen-Poiseuille Flow
       ''',
       install_requires = [
           "numpy >= 1.21.6"
@@ -14,5 +14,5 @@ setup(name="HPPL (High Performance Python Lab)-Final Project-2022",
           "matplotlib >= 3.2.2"
       ],
 
-long_description = open('README.md').read()
+      long_description = open('README.md').read()
 )
