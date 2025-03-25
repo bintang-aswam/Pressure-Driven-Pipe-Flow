@@ -12,7 +12,7 @@ Team's member:
 
 **Short Description:**
 
-**Hagen-Poiseuille Flow** can be understood as an ideal approximation to **axisymmetrical flow inside a pipe** (a.k.a internal flow) due to the presence of **pressure-driven**. It only occurs at **SMALL Reynolds Number**(defined as the ratio between **inertial force** over **viscous force**) regime (a.k.a **incompressible viscous flow**).  
+**Hagen-Poiseuille Flow** can be comprehended as an ideal approximation to **axis-symmetrical flow inside a pipe** (so called internal flow) due to the presence of **pressure-driven**. It only occurs at **SMALL Reynolds Number** which defined as the ratio between **inertial force** over **viscous force**, in short it is called as **incompressible viscous flow**.  
 
 **Numerical Procedure:**
 
